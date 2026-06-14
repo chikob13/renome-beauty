@@ -117,7 +117,7 @@ h3{font-size:1.28rem;line-height:1.15;letter-spacing:-.035em;font-weight:720}
 .menu-cart-open{position:relative;overflow:visible}
 .menu-cart-open span,.floating-menu-cart span{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 7px;border-radius:999px;background:#111;color:#fff;font-size:.78rem;font-weight:820;margin-left:6px}
 .btn-dark.menu-cart-open span{background:#fff;color:#111}
-.menu-item{align-items:center;grid-template-columns:minmax(0,1fr) auto auto}
+.menu-item{align-items:center}
 .menu-item .menu-add-button{justify-self:end;border:0;border-radius:999px;background:#111;color:#fff;padding:11px 15px;font-weight:800;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;white-space:nowrap}
 .menu-item .menu-add-button:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
 .menu-item .menu-add-button.added{background:#9d856d}
@@ -142,7 +142,10 @@ h3{font-size:1.28rem;line-height:1.15;letter-spacing:-.035em;font-weight:720}
 <nav class="nav-links" data-nav="">
 <a href="index.html">Главная</a>
 <a href="index.html#space">Пространство</a>
+<a href="index.html#masters">Мастера</a>
+<a href="index.html#technologies">Аппараты</a>
 <a class="active" href="menu.html">Меню</a>
+<a href="marketplace.html">Маркетплейс</a>
 <a href="index.html#reviews">Отзывы</a>
 <a href="index.html#contacts">Контакты</a>
 </nav>
@@ -150,7 +153,7 @@ h3{font-size:1.28rem;line-height:1.15;letter-spacing:-.035em;font-weight:720}
 <button class="btn btn-subtle nav-only menu-cart-open" type="button" data-menu-cart-open>Корзина <span data-menu-cart-count>0</span></button>
 <a aria-label="RENOMÉ" class="renome-signature" href="index.html"><span>RENOMÉ</span></a>
 <a class="btn btn-subtle nav-only" href="https://2gis.kz/almaty/firm/70000001032690020" rel="noreferrer" target="_blank">2GIS</a>
-<a class="btn btn-dark nav-only" href="https://wa.me/77010990330" rel="noreferrer" target="_blank">Записаться</a>
+<a class="btn btn-dark nav-only" href="https://n273379.alteg.io/company/198823/personal/select-services?utm_source=ig&utm_medium=social&utm_content=link_in_bio" rel="noreferrer" target="_blank">Записаться</a>
 <button aria-label="Открыть навигацию" class="menu-button" data-menu-button="" type="button">
 <span></span><span></span>
 </button>
@@ -165,7 +168,7 @@ h3{font-size:1.28rem;line-height:1.15;letter-spacing:-.035em;font-weight:720}
 <p class="lead">Напитки и лёгкие позиции для красивого ожидания, спокойной паузы и премиального клиентского сервиса.</p>
 <div class="hero-actions">
 <a class="btn btn-dark" href="index.html">На главную</a>
-<a class="btn btn-light" href="https://wa.me/77010990330" rel="noreferrer" target="_blank">Записаться</a>
+<a class="btn btn-light" href="https://n273379.alteg.io/company/198823/personal/select-services?utm_source=ig&utm_medium=social&utm_content=link_in_bio" rel="noreferrer" target="_blank">Записаться</a>
 <button class="btn btn-light menu-cart-open" type="button" data-menu-cart-open>Корзина меню <span data-menu-cart-count>0</span></button>
 </div>
 </div>
@@ -415,8 +418,7 @@ if(categoryLinks.length && sections.length && 'IntersectionObserver' in window){
   function buildMessage(){
     if(!cart.length) return 'Здравствуйте! Хочу оформить заказ из меню RENOMÉ.';
     const lines = cart.map((item,idx)=>`${idx+1}. ${item.name} — ${item.qty} шт. × ${currency(item.price)} = ${currency(item.qty*item.price)}`);
-    return ['Здравствуйте! Хочу оформить заказ из меню RENOMÉ:', ...lines, `Итого: ${currency(totalSum())}`, 'Подскажите, пожалуйста, по наличию и оплате.'].join('
-');
+    return ['Здравствуйте! Хочу оформить заказ из меню RENOMÉ:', ...lines, `Итого: ${currency(totalSum())}`, 'Подскажите, пожалуйста, по наличию и оплате.'].join('\n');
   }
 
   function render(){
